@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Author" content="匿名">
+    <title>5G服务宣传页</title>
+
+    <style>
+        /* ===== 全局 ===== */
+        body {
+            margin: 0;
+            background: #f2f5f9;
+            font-family: "Microsoft YaHei", Arial, sans-serif;
+        }
+
+        /* ===== 页头 ===== */
+        header {
+            min-height: 320px;
+            background-image: url('Header background.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            color: #fff;
+            padding: 40px 20px;
+            box-sizing: border-box;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 48px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+        }
+
+        header p {
+            margin: 40px 0 0;
+            font-size: 20px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+        }
+
+        /* ===== 导航栏 ===== */
+        nav.box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+
+            background: #ffffff;
+            padding: 18px 0;
+            width: 100%;
+
+            border-bottom: 1px solid #e0e0e0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav.box a {
+            color: #0b57d0;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 6px 4px;
+        }
+
+        nav.box a:hover {
+            color: #003c9e;
+            text-decoration: underline;
+        }
+
+        /* ===== 正文内容区 ===== */
+        main {
+            max-width: 960px;
+            width: 90%;
+            margin: 32px auto;
+        }
+
+        main section {
+            background: #ffffff;
+            padding: 28px 32px;
+            margin-bottom: 24px;
+            border-radius: 10px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e6ebf2;
+            box-sizing: border-box;
+        }
+
+        /* 标题下用边框代替 <hr>，语义更干净 */
+        main section h2 {
+            margin: 0 0 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #e6ebf2;
+            font-size: 22px;
+            color: #0b57d0;
+        }
+
+        main section img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* ===== 数据表格：无边框，用内边距分隔 ===== */
+        main section table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        main section caption {
+            caption-side: top;
+            text-align: left;
+            font-size: 14px;
+            color: #6b7280;
+            padding-bottom: 8px;
+        }
+
+        main section th,
+        main section td {
+            border: none;
+            padding: 10px 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        main section th {
+            background: #f5f8ff;
+            font-weight: 600;
+        }
+
+        /* ===== 真实案例：flex 布局，图与文底部对齐 ===== */
+        .case-row {
+            display: flex;
+            align-items: flex-end;   /* 关键：图片与文字底边对齐 */
+            gap: 20px;
+        }
+
+        .case-row img {
+            display: block;
+            width: 300px;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .case-text p {
+            margin: 0 0 12px;
+        }
+
+        .case-text p:last-child {
+            margin-bottom: 0;        /* 末段去掉底部外边距，底边才真正齐平 */
+        }
+
+        /* 窄屏时图片与文字改为上下排列 */
+        @media (max-width: 640px) {
+            .case-row {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+
+        /* ===== 页脚 ===== */
+        footer {
+            text-align: center;
+            padding: 24px 16px;
+            color: #6b7280;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 页头 -->
+    <header>
+        <h1>5G企业服务</h1>
+        <p>为千行百业提供高速、可靠、低时延的专属网络</p>
+    </header>
+
+    <!-- 导航栏 -->
+    <nav class="box" aria-label="主导航">
+        <a href="#intro">服务简介</a>
+        <a href="#features">核心能力</a>
+        <a href="#stats">行业数据</a>
+        <a href="#case">真实案例</a>
+        <a href="https://github.com/UniverseMax/5G-Service-Brochure-Web" target="_blank" rel="noopener noreferrer">网页源码</a>
+    </nav>
+
+    <!-- 正文 -->
+    <main>
+        <section id="intro">
+            <h2>什么是5G企业服务</h2>
+            <p>5G 企业服务，是面向工业制造、港口、矿山、医疗、交通等行业客户，提供的<strong>专属5G网络</strong>与<strong>行业应用解决方案</strong>。与面向公众的 5G 不同，企业客户更看重网络<em>可靠性、安全性和低时延</em>。</p>
+            <p>截至 2025 年底，全国 5G 基站超 <strong>483.8 万个</strong>，5G 行业虚拟专网超<strong> 4 万个</strong>，覆盖工业、交通、医疗、教育等 20 多个国民经济大类。</p>
+        </section>
+
+        <section id="features">
+            <h2>5G 企业服务核心能力</h2>
+            <ul>
+                <li><span style="color: #0b57d0;">大带宽</span>：单小区下行速率达 1Gbps 以上，支持 4K/8K 视频回传</li>
+                <li><span style="color: #0b57d0;">低时延</span>：端到端时延可低至 20 毫秒以内，满足远程控制需求</li>
+                <li><span style="color: #0b57d0;">广连接</span>：每平方公里可接入百万级设备，适合物联网场景</li>
+                <li><span style="color: #0b57d0;">高可靠</span>：数据不出园区，安全可控，满足企业合规要求</li>
+                <li><span style="color: #0b57d0;">边缘计算</span>：算力下沉到园区本地，业务处理更快</li>
+            </ul>
+        </section>
+
+        <section id="stats">
+            <h2>行业应用统计表</h2>
+            <table>
+                <caption>5G 行业应用典型场景与价值</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">行业</th>
+                        <th scope="col">典型应用场景</th>
+                        <th scope="col">价值</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>智慧港口</td><td>远程吊桥控制、无人集卡调度</td><td>作业效率提升 30%</td></tr>
+                    <tr><td>智慧矿山</td><td>井下无人矿卡、远程采掘机</td><td>减少井下作业人员</td></tr>
+                    <tr><td>钢铁制造</td><td>远程天车、设备预测性维护</td><td>降低高危岗位风险</td></tr>
+                    <tr><td>汽车工厂</td><td>柔性生产线、AGV 物流</td><td>产线换型时间缩短</td></tr>
+                    <tr><td>智慧医疗</td><td>远程会诊、移动查房</td><td>优质资源下沉基层</td></tr>
+                </tbody>
+            </table>
+            <p><small>数据来源：工信部公开数据，截至 2025 年底。</small></p>
+        </section>
+
+        <section id="case">
+            <h2>真实案例：上海洋山港四期自动化码头</h2>
+            <div class="case-row">
+                <img src="上海洋山港四期自动化码头.png"
+                     alt="洋山港四期自动化码头岸桥与自动导引车作业场景">
+                <div class="case-text">
+                    <p>海洋山港四期是<strong>全球单体最大的全自动化码头</strong>，2017年底，开港码头上的桥吊，轨道吊，自动导引运输车（AGV）全部通过5G网络远程协同。</p>
+                    <p>司机坐在几百米外的中控室，对着屏幕远程操控桥吊，集装箱卡车无人化运行，自己认路，自己避让。2024年码头吞吐量突破<strong>700万标准箱</strong>，桥吊单机作业效率超过<strong>60自然箱/小时</strong>，比传统码头提升近三成。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>5G企业服务教学示例·数据来源：工信部公开报道</p>
+    </footer>
+
+</body>
+</html>
