@@ -1,0 +1,23 @@
+/* 暗色主题：只覆盖变量和少量显示状态 */
+:root {
+    --bg: #0f172a;
+    --surface: #1e293b;
+    --surface-alt: #273449;
+    --text: #e2e8f0;
+    --text-muted: #94a3b8;
+    --primary: #60a5fa;
+    --primary-hover: #93c5fd;
+    --border: #334155;
+    --nav-border: #334155;
+    --shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+    --nav-shadow: 0 4px 12px rgba(0, 0, 0, 0.55);
+}
+
+/* 暗色下按钮显示“浅色” */
+.theme-toggle__light {
+    display: none;
+}
+
+.theme-toggle__dark {
+    display: inline;
+}

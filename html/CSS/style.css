@@ -1,0 +1,230 @@
+/* ===== 亮色主题变量 ===== */
+:root {
+    --bg: #f2f5f9;
+    --surface: #ffffff;
+    --surface-alt: #f5f8ff;
+    --text: #1f2937;
+    --text-muted: #6b7280;
+    --primary: #0b57d0;
+    --primary-hover: #003c9e;
+    --border: #e6ebf2;
+    --nav-border: #e0e0e0;
+    --shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    --nav-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== 全局 ===== */
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Microsoft YaHei", Arial, sans-serif;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* ===== 页头 ===== */
+header {
+    min-height: 320px;
+    background-image: url('../imgs/Header background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    color: #fff;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 48px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+header p {
+    margin: 40px 0 0;
+    font-size: 20px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* ===== 导航栏 ===== */
+nav.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+
+    background: var(--surface);
+    padding: 18px 0;
+    width: 100%;
+    box-sizing: border-box;
+
+    border-bottom: 1px solid var(--nav-border);
+    box-shadow: var(--nav-shadow);
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+nav.box a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 6px 4px;
+}
+
+nav.box a:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+}
+
+/* ===== 主题切换按钮 ===== */
+.theme-toggle {
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--primary);
+    border-radius: 999px;
+    padding: 6px 10px;
+
+    font: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.theme-toggle:hover {
+    border-color: var(--primary);
+}
+
+.theme-toggle__dark {
+    display: none;
+}
+
+/* ===== 正文内容区 ===== */
+main {
+    max-width: 960px;
+    width: 90%;
+    margin: 32px auto;
+}
+
+main section {
+    background: var(--surface);
+    padding: 28px 32px;
+    margin-bottom: 24px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    box-sizing: border-box;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+main section h2 {
+    margin: 0 0 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+    font-size: 22px;
+    color: var(--primary);
+}
+
+main section img {
+    max-width: 100%;
+    height: auto;
+}
+
+.accent {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* ===== 数据表格：无边框，用内边距分隔 ===== */
+main section table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+main section caption {
+    caption-side: top;
+    text-align: left;
+    font-size: 14px;
+    color: var(--text-muted);
+    padding-bottom: 8px;
+}
+
+main section th,
+main section td {
+    border: none;
+    padding: 10px 12px;
+    text-align: left;
+    vertical-align: top;
+}
+
+main section th {
+    background: var(--surface-alt);
+    font-weight: 600;
+}
+
+/* ===== 真实案例：flex 布局，图与文底部对齐 ===== */
+.case-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+.case-row img {
+    display: block;
+    width: 300px;
+    max-width: 100%;
+    height: auto;
+}
+
+.case-text p {
+    margin: 0 0 12px;
+}
+
+.case-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* ===== 页脚 ===== */
+footer {
+    text-align: center;
+    padding: 24px 16px;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+/* ===== 窄屏适配 ===== */
+@media (max-width: 640px) {
+    nav.box {
+        flex-wrap: wrap;
+        gap: 16px;
+        padding: 12px 16px;
+    }
+
+    .theme-toggle {
+        position: static;
+        transform: none;
+        margin-left: auto;
+    }
+
+    .case-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
